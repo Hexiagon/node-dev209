@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="javascripts/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="stylesheets/styles.css">
+    
+    <title>Favorite Restaurants</title>
+</head>
+<body>
+    
+    <!--Start main page-->
+    <div data-role="page" id="home">
+        <div data-role="header" data-theme="a">
+            <h3>Favorite Restaurants</h3>
+            <div data-role="navbar" data-theme="a">
+                <ul>
+                    <li><a href="#home">Home Page</a></li>
+                    <li><a href="#list">Favorite Resturants List Notes</a></li>
+                    <li><a href="#add" >Add your Favorite Resturant</a></li>
+                </ul>
+            </div>
+        </div>
+        <div data-role="content" data-theme="a">
+            <div class="newFont">
+                This is a website where you can add, rate on a 1-5, remove, and keep your Favorite Restaurants.
+                You can also select the type of resturant, organize your list, and add an address to your favorite resturant.
+            </div>
+        </div>
+        <div data-role="footer" data-theme="a">
+            <h3>Copyright 2024 by Hexiagon and Anh</h3>
+        </div>
+    </div>
+    
+    <!--end main page-->
+
+     <!--start page 2: Add Favorite Restaurants-->
+     <div data-role="page" id="add">
+        <div data-role="header" data-theme="a">
+            <h3>Add your Favorite Resturant</h3>
+            <div data-role="navbar" data-theme="a">
+                <ul>
+                    <li><a href="#home">Home Page</a></li>
+                    <li><a href="#list">Favorite Resturants List Notes</a></li>
+                    <li><a href="#add" >Add your Favorite Resturant</a></li>
+                </ul>
+            </div>
+            
+        </div>
+
+        
+        <div data-role="content" data-theme="a">
+            <h2>Enter your Favorite Resturant</h2>
+            Enter Favorite Restaurant name<br >
+            <input type="text" value="" id="name" />
+            
+            <label for="select-type">Select a Favorite Restaurant Type</label>
+            <select name="select-type" id="select-type">
+                <option disabled selected value> -- select an option --</option>
+                <option value="Fast-food">Fast food</option>
+                <option value="Food-truck">Food truck</option>
+                <option value="Cafe">Cafe</option>
+            </select>
+            
+            Enter Favorite Restaurant Address<br>
+            <input type="text" value="" id="address" />
+            
+            <!--Star-->
+            <div class="ui-field-contain">
+                <label for="star-rating">Select your preferred star rating</label>
+                <select name="star-rating" id="star-rating">
+                    <option disabled selected value> -- select an option --</option>
+                    <option value="1 Star">1 Star</option>
+                    <option value="2 Stars">2 Stars</option>
+                    <option value="3 Stars">3 Stars</option>
+                    <option value="4 Stars">4 Stars</option>
+                    <option value="5 Stars">5 Stars</option>
+                </select>
+            </div>
+
+            Enter Favorite Restaurant Online Home Page (URL)<br>
+            <input type="text" value="" id="URL" />
+
+            <input type="button" value="Click to add Favorite Resturant" id="buttonAdd" data-inline="true" />
+            <input type="button" value="Clear Data" id="buttonClear" data-inline="true" />
+        </div>
+        <div data-role="footer" data-theme="a">
+            <h3>Copyright 2024 by Hexiagon and Anh</h3>
+        </div>
+    </div>
+    <!--end page 2-->
+   
+    <!--start page 3: Favorite Restaurant List-->
+    <div data-role="page" id="list">
+        <div data-role="header" data-theme="a">
+            <h3>My Favorite Restaurants List</h3>
+            <div data-role="navbar" data-theme="a">
+                <ul>
+                    <li><a href="#home">Home Page</a></li>
+                    <li><a href="#list">Favorite Resturants List Notes</a></li>
+                    <li><a href="#add" >Add your Favorite Resturant</a></li>
+                </ul>
+            </div>
+            
+            <br><br>
+        </div>
+        <div data-role="content" data-theme="a">
+            <h3>Here are my Favorite Resturants</h3>
+            <table id="tableID"></table>
+        </div>
+        <div data-role="footer" data-theme="a">
+            <h3>Copyright 2024 by Hexiagon and Anh</h3>
+        </div>
+    </div>
+    <!--end page 3-->
+    <div data-role="page" id="details">
+        <div data-role="header" data-theme="a">
+            <h3>My Favorite Restaurant Details</h3>
+            <div data-role="navbar" data-theme="a">
+                <ul>
+                    <li><a href="#home">Home Page</a></li>
+                    <li><a href="#list">Favorite Resturants List Notes</a></li>
+                    <li><a href="#add" >Add your Favorite Resturant</a></li>
+                </ul>
+            </div>
+            
+            <br><br>
+        </div>
+        <div data-role="content" data-theme="a">
+            <p>Here is my Favorite Resturant details:</p>
+            <p id="resturantName"></p>
+            <p id="resturantType"></p>
+            <p id="resturantAddress"></p>
+            <p id="resturantStar"></p>
+            <p id="resturantURL" hidden></p>
+            <input type="button" value="Website" id="r.Website">
+        </div>
+        <div data-role="footer" data-theme="a">
+            <h3>Copyright 2024 by Hexiagon and Anh</h3>
+        </div>
+    </div>
+   
+</body>
+</html>
