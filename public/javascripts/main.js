@@ -45,6 +45,19 @@ document.addEventListener("DOMContentLoaded", function(){
         });
     });
 
+    document.getElementById("delete").addEventListener("click", function(){
+        let resturantID=localStorage.getItem("parm");
+        $.ajax({
+            type : "DELETE",
+            url : "/DeleteResturant/"+resturantID,
+            success: function(result){
+                alert(result);
+            },
+            error: function(xhr,testStatus,errorThrown){
+                alert("Server could not delete Resturant with ID: "+ID)
+            }
+        });
+    });
 
     document.getElementById("buttonClear").addEventListener("click", function(){
         document.getElementById("name").value="";
