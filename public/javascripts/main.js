@@ -23,12 +23,26 @@ document.addEventListener("DOMContentLoaded", function(){
 
     document.getElementById("buttonAdd").addEventListener("click", function (){
 
-        NoteArray.push(new NoteObject(document.getElementById("name").value, 
+        let newResturant=new NoteObject(document.getElementById("name").value, 
         selectedType, 
         document.getElementById("address").value, 
         starRating, 
-        document.getElementById("URL").value));
-        document.location.href="index.html#list";
+        document.getElementById("URL").value);
+        //document.location.href="index.html#list";
+        $.ajax({
+            url : 'AddResturant',
+            type : 'POST',
+            data : JSON.stringify(newResturant),
+            contentType : 'application/json; charset=utf-8',
+            success: function(result){
+                console.log(result);
+                document.location.href="index.html#list";
+            },
+            error: function(xhr,testStatus,errorThrown){
+                alert("Server could not add Resturant: "+newResturant.Name);
+                alert(testStatus+" "+errorThrown);
+            }
+        });
     });
 
 

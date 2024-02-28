@@ -27,4 +27,10 @@ router.get('/getAllResturants', function(req, res) {
   res.status(200).json(serverNoteArray);
 });
 
+router.post('/AddResturant',function(req,res){
+  const newResturant= req.body;
+  serverNoteArray.push(newResturant);
+  res.status(200).json(newResturant);
+});
+
 module.exports = router;
